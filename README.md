@@ -1,15 +1,61 @@
-# email_bot
+# Create Your Own Email Bot
 
-**THE GOOGLE WILL GIVE YOU A ERROR HOW TO FIX IT IS FIRST GO TO YOUR GMAIL THERE YOU WIL GET MAIL THAT SOMEONE IS TRYING TO SEND EMAIL FROM YOUR ACCOUNT TO TURN ON THIS THE LINE WHERE THE URL BAR IS THERE, THERE YOU FIND THREE DOTS CLICK ON IT AND THEN CLICK ON MANAGE YOU GOOGLE ACCOUNT ON THE LEFT SIDE PANEL CLICK ON SECURITY SCROLL DOWN A LITTLE AND THERE YOU WILL FIND LESS SECURE APP ACCESS THEN AT THE DOWN THERE IS TURN ON ACCESS CLICK ON THAT AND THEN TURN ON THE APP ACCESS AND IT IS DONE NOW YOU CAN SEND YOUR EMAILS WITH YOUR OWN MADE BOTS**
+Tired of manually writing hundreds of emails? With just 8 lines of Python code, you can create an Email Bot to send emails automatically.
 
-Now you need not write 100 of mails with your hand with just 8 lines of python you can make your Email Bot and it will be amazing!!
-I have done it by using Pycharm which is an python code editor.
-At the first I have imported smtplib which is already installed with python.
-Then I have created a variable called server and entered the value as smtplib.SMTP('smtp.gmail.com', 587).
-Then I have told the variable server that starttls() so I would write it as server.starttls().
-Then again I have told the server that server.login('YOUR EMAIL ADDRESS', 'YOUR EMAIL ADDRESS PASSWORD').
-Then you will write server.sendmail('SENDERS EMAIL ADDRESS',
-                    'RECIEVER'S ADDRESS',
-                    'AND YOUR MESSAGE'
-                    )
-WOOHOO now your email bot is ready!!                    
+Follow these simple steps to build your Email Bot.
+
+Prerequisites
+Step 1: Configure Your Gmail Account
+To allow your bot to send emails using your Gmail account:
+
+Open Gmail and check your inbox for a security email about someone trying to access your account.
+Follow these steps to enable "Less Secure App Access":
+Click on the three dots in your browser's URL bar and select "Manage Your Google Account."
+In the left-side panel, click on "Security."
+Scroll down to find "Less Secure App Access."
+Click "Turn On Access" and enable the feature.
+Now your Email Bot can use your Gmail account securely.
+Writing the Email Bot
+Import the Required Library
+
+Use Python's built-in smtplib library for sending emails.
+
+import smtplib
+Set Up the SMTP Server
+
+Define the SMTP server details and initialize the connection.
+
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()  # Encrypt the connection using TLS
+Log in to Your Email Account
+
+Use your Gmail address and app password for authentication.
+
+server.login('YOUR_EMAIL_ADDRESS', 'YOUR_EMAIL_PASSWORD')
+Send the Email
+
+Use the sendmail method to send the email with the sender's address, recipient's address, and message.
+
+server.sendmail('SENDER_EMAIL_ADDRESS', 
+                'RECIPIENT_EMAIL_ADDRESS', 
+                'YOUR_MESSAGE')
+Full Code Example
+Here's the complete 8-line Python code for your Email Bot:
+
+import smtplib
+
+server = smtplib.SMTP('smtp.gmail.com', 587)
+server.starttls()
+server.login('YOUR_EMAIL_ADDRESS', 'YOUR_EMAIL_PASSWORD')
+server.sendmail('SENDER_EMAIL_ADDRESS',
+                'RECIPIENT_EMAIL_ADDRESS',
+                'YOUR_MESSAGE')
+server.quit()
+Features:
+Efficient: Send emails automatically in seconds.
+Customizable: Modify the recipient list and message content as needed.
+Simple: Just a few lines of code!
+Notes:
+Replace placeholders (YOUR_EMAIL_ADDRESS, etc.) with actual values.
+Always protect your email credentials. Use environment variables or encrypted storage if sharing or deploying the code.
+Now your Email Bot is ready! 🎉 Enjoy automating your emails effortlessly!
